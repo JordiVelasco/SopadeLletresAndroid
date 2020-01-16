@@ -11,10 +11,11 @@ import java.util.ArrayList;
 public class LetterAdapter extends BaseAdapter {
     private Context context;
     private ArrayList<String> wordList = new ArrayList<>();
-    private String[] listapalabra;//= wordList.toArray(new String[0]);
+    private String[] listapalabra;
     private static LetterSearch wordSearch;
     private static int row, col;
 
+    //Contructor on es declaren les lletres que s'utilitzen
     public LetterAdapter(Context c) {
         wordList.add("HOLA");
         wordList.add("ADEU");
@@ -38,11 +39,11 @@ public class LetterAdapter extends BaseAdapter {
         return 0;
     }
 
+    //Printa la sopa de lletres
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         TextView textView;
         if (convertView == null) {
-            // if it's not recycled, initialize some attributes
             textView = new TextView(context);
             textView.setLayoutParams(new GridView.LayoutParams(85, 85));
             textView.setPadding(8, 8, 8, 8);
